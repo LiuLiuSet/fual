@@ -1,0 +1,425 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>底部导航</title>
+    <link rel="stylesheet" type="text/css" href="css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="css/ct.css"/>
+
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #wrap {
+            height: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-flex-flow: column;
+            flex-flow: column;
+        }
+
+        #main {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+
+        #footer {
+            width: 100%;
+            text-align: center;
+            height: 60px;
+            line-height: 40px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        ul {
+
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .cloud {
+            background-image: url(image/pic1.png);
+            margin-top: 10px;
+        }
+
+        .client {
+            background-image: url(image/pic2.png);
+            margin-top: 10px;
+        }
+        .doc {
+            background-image: url(image/pic3.png);
+            margin-top: 10px;
+        }
+		.about {
+            background-image: url(image/pic4.png);
+            margin-top: 10px;
+        }
+        #footer li {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            height: 45px;
+        }
+
+        .bottom_btn {
+            background-position-y: 4px;
+            padding-top: 20px;
+            font-size: 12px;
+            color: #000;
+            width: 99%;
+            height: 39px;
+            background-repeat: no-repeat no-repeat;
+            background-position-x: center;
+            background-size: 30px;
+        }
+
+        .active .cloud {
+            background-image: url(image/pic_1.png);
+            margin-top: 10px;
+        }
+
+        .active .client {
+            background-image: url(image/pic_2.png);
+            margin-top: 10px;
+        }
+        .active .doc {
+            background-image: url(image/pic_3.png);
+            margin-top: 10px;
+        }
+        .active .about {
+            background-image: url(image/pic_4.png);
+            margin-top: 10px;
+        }
+        .active .bottom_btn {
+            color: #CC324B;
+            background-size: 30px;
+        }
+
+        .topbar {
+            background: #DF3F40;
+            height: 50px;
+            border-bottom: 1px solid #DF3F40;
+            line-height: 50px;
+            text-align: center;
+            display: none;
+            color: #fff;
+        }
+        .image{
+        	position: absolute;
+        	right: 10px;
+        	top:10px;
+        	/*width: 40px;
+        	height: 10px;*/
+        }
+        .activebar {
+            display: block;
+        }
+        input[type=checkbox].ace-switch+.lbl {
+	position: relative
+		}
+		input[type=checkbox].ace-switch, input[type=radio].ace-switch {
+			opacity: 0;
+			position: absolute;
+			z-index: 12;
+			
+		}
+		input[type=checkbox].ace-switch+.lbl::before {
+			
+			content: "商城";
+			border:1px solid #B02828;
+			font-weight:normal;
+			font-size: 18px;
+			border-radius: 30px;
+			display: inline-block;
+			background-color: #B02828;
+			color: #DF3F3F;
+			width: 140px;
+			height: 30px;
+			line-height: 30px;
+			text-indent:70px;
+			color:#DF3F3F;
+			-webkit-transition: background .1s ease;
+			-moz-transition: background .1s ease;
+			-o-transition: background .1s ease;
+			-ms-transition: background .1s ease;
+			transition: background .1s ease
+		}
+		input[type=checkbox].ace-switch:checked+.lbl::before {
+			content: "囤油";
+			text-indent:-70px;
+			color: #DF3F3F;
+			border-color: #B02828;
+			background-color: #B02828;
+		}
+		input[type=checkbox].ace-switch+.lbl::after {
+			content: '';
+			position: absolute;
+			top: 10px;
+			left: 1px;
+			color: #fff;
+			content: "囤油";
+			border-radius: 40px;
+			width: 70px;
+			height: 28px;	
+			line-height: 28px;
+			background-color: #DF3F3F;
+			border: 1px solid #DF3F3F;
+			-webkit-transition: left .2s ease;
+			-moz-transition: left .2s ease;
+			-o-transition: left .2s ease;
+			-ms-transition: left .2s ease;
+			transition: left .2s ease;
+		}
+		input[type=checkbox].ace-switch:checked+.lbl::after {
+			left: 69px;
+			content: "商城";
+			background-color: #DF3F3F;
+			
+		}
+		label{
+			position: relative;
+			padding-bottom:10px ;
+		}
+		.iconfont-qiandaoicon{
+			position: absolute;
+			top:0px;
+			color: #fff;
+			right: 8px;
+			font-size: 28px;
+			
+		}
+		.iconfont-yonghu{
+			position: absolute;
+			left: 8px;
+			top:0;
+			color: #fff;
+			font-size:28px ;
+		}
+		.news-classify{
+				position: absolute;
+				left: 0;
+				top: 50px;
+				width: 100%;
+				height: 40px;
+				overflow: hidden;	
+				background-color: #fff;
+			}
+			#scroller {
+				position: absolute;
+				z-index: 1;
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+				/*width: auto;*/
+				height: 160px;
+				-webkit-transform: translateZ(0);
+				transform: translateZ(0);
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-webkit-text-size-adjust: none;
+				text-size-adjust: none;
+			}			
+			#scroller ul {
+				list-style: none;
+				width: auto;
+				padding: 0;
+				margin: 0;
+				/*height: 50px;*/
+				line-height: 50px;
+			}
+			
+			#scroller li {
+				width: 50px;
+				height: 40px;
+				padding: 0 8px;
+				float: left;
+				line-height: 40px;
+				/*background-color: #fff;*/
+				font-size: 14px;
+				overflow: hidden;
+				text-align: center;
+				color: #B3A89D;
+				transition: background-color 0.2s ease-in 0s;
+				-webkit-transition: background-color 0.5s ease-in 0s;
+			}			
+			.active-classify::after{
+				content: '';
+				width: 100%;
+				height: 3px;
+				display: block;
+				position: absolute;
+				color: red;
+				bottom: 0;
+				left: 0;				
+				background-color: #fff;
+			}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <header>
+        <div id="cloud" class="topbar activebar">
+        	<div onclick="openShop()">
+        		<label>
+					<input name="" id="isLimitTake" class="ace-switch ace-switch-6" type="checkbox">
+					<span class="lbl"></span>
+			   </label>
+        	</div>
+        	<div style="display: block;"></div>
+        	<div class="user" onclick="opneUser()"><i class="iconfont-yonghu"></i></div>
+        	<span class="iconfont-qiandaoicon" ></span>
+        </div>
+        <div id="client" class="topbar">
+             <div onclick="openShop()">
+        		<label>
+					<input name="" class="ace-switch ace-switch-6" type="checkbox">
+					<span class="lbl"></span>
+			   </label>
+        	</div>
+        	<div class="user" onclick="opneUser()"><i class="iconfont-yonghu"></i></div>
+        	<span class="iconfont-qiandaoicon" ></span>
+        	<div class="news-classify">
+				<div id="scroller">
+					<ul>
+						<li classify-id="0" onclick="" tapmode="" class="active-classify" style="width: 80px">平台动态</li>
+						<li classify-id="1" onclick="" tapmode="" style="width: 80px">新闻动态</li>
+					</ul>
+				</div>
+			</div>
+          </div>
+        <div id="doc" class="topbar">
+        	<div onclick="openShop()">
+        		<label>
+					<input name="" class="ace-switch ace-switch-6" type="checkbox">
+					<span class="lbl"></span>
+			   </label>
+        	</div>
+        	<div class="user" onclick="opneUser()"><i class="iconfont-yonghu"></i></div>
+        	<span class="iconfont-qiandaoicon" ></span>
+        </div>
+        <div id="about" class="topbar">
+          <div onclick="openShop()">
+        		<label>
+					<input name="" class="ace-switch ace-switch-6" type="checkbox">
+					<span class="lbl"></span>
+			   </label>
+        	</div>
+        	<div class="user" onclick="opneUser()"><i class="iconfo  nt-yonghu"></i></div>
+        	<span class="iconfont-qiandaoicon" ></span>
+        </div>
+    </header>
+    <div id="main">
+           
+    </div>
+    <div id="footer">
+        <ul>
+            <li tapmode="active" class="active" onclick="randomSwitchBtn(this,'cloud',0)">
+                <a class="bottom_btn cloud">首页</a>
+            </li>
+            <li tapmode="active" onclick="randomSwitchBtn(this,'client',1)">
+                <a class="bottom_btn client ">资讯</a>
+            </li>
+            <li tapmode="active" onclick="randomSwitchBtn(this,'doc',2)">
+                <a class="bottom_btn doc ">交易</a>
+            </li>
+            <li tapmode="active" onclick="randomSwitchBtn(this,'about',3)">
+                <a class="bottom_btn  about">账户</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="script/api.js"></script>
+<script type="text/javascript">
+    apiready = function () {
+        var $header = $api.dom('header');
+        $api.fixIos7Bar($header);
+        var $body = $api.dom('body');
+        var $footer = $api.byId('footer');
+        var header_h = $api.offset($header).h;
+        var body_h = $api.offset($body).h;
+        var footer_h = $api.offset($footer).h;
+        var rect_h = body_h - header_h - footer_h;
+        api.openFrameGroup({
+            name: 'group',
+            scrollEnabled: false,
+            rect: {x: 0, y: header_h, w: 'auto', h: rect_h},
+            index: 0,
+            frames: [
+                {
+                    name: 'index',
+                    url: 'html/index/index.html'
+                },
+                {
+                    name: 'news',
+                    url: 'html/news/index.html'
+                },
+                {
+                    name: 'trad',
+                    url: 'html/trad/index.html'
+                },
+                {
+                    name: 'mine',
+                    url: 'html/mine/index.html'
+                }
+            ]
+        }, function (ret, err) {
+        });
+    }
+    // 随意切换按钮
+    function randomSwitchBtn(obj, name, index) {
+        var $header = $api.dom('header');
+        var $titleBar = $api.domAll($header, '.topbar');
+        for (var i = 0; i < $titleBar.length; i++) {
+            $api.removeCls($titleBar[i], 'activebar');
+        }
+        $api.addCls($api.byId(name), 'activebar');
+        var $footer = $api.byId('footer');
+        var $footerBar = $api.domAll($footer, 'li');
+        for (var j = 0; j < $footerBar.length; j++) {
+            $api.removeCls($footerBar[j], 'active');
+        }
+        $api.addCls(obj, 'active');
+        api.setFrameGroupIndex({
+            name: 'group',
+            index: index
+        });
+
+    }
+    function opneUser(){
+    	api.openWin({
+				name: 'user',
+				url: api.wgtRootDir + '/html/window/win.html',
+				pageParam: {
+					headerTitle: '个人账户',
+					frameName: 'openUser',
+					frameUrl: api.wgtRootDir + '/html/mine/account.html'
+				},
+				bounces: false,
+				slidBackEnabled:false
+			});
+    }
+    function openShop(){
+    	api.openWin({
+				name: 'openShop',
+				url: api.wgtRootDir + '/html/window/shop.html',
+				bounces: false
+			});	
+    }
+    
+//  $().on('click',function(){
+//   if($(api.isLimitTake).prop("checked")){
+//         
+//			}else{
+//				
+//			}
+//		})
+
+</script>
+</html>
