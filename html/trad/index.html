@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="../../css/ct.css"/>
+		<style type="text/css">
+	      body{
+	      	background: #262626;
+	      }
+	      .trad_list{
+	      	border-bottom: 1px solid #4F4F4F;
+	      	height: 35px;
+	      	color: #fff;
+	      	line-height: 39px;
+	      	font-size: 12px;
+	      }
+	      .tear_center{
+	      	height: 45px;
+	      	line-height: 45px;
+	      	border-bottom: 1px solid #4F4F4F;
+	      	
+	      }
+	       .tear_center > div{
+	       	color: #fff;
+	       	text-align: center;
+	       	font-size: 14px;
+	       }
+	       .zhangfu{
+	       	height: 30px;
+	       	width: 60px;
+	       	line-height: 30px;
+	       	color: #fff;
+	       	background: #E73706;
+	       	border-radius: 3px;
+	       }
+	       .trad_hangxing{
+	       	font-size: 12px;
+	       	color: #838383;
+	       	text-align: center;
+	       	margin-top: 20px;
+	       }
+	       .trad_hangxing i{
+	       	font-size:8px ;
+	       	color: #00B8F0;
+	       	position: relative;
+	       	top:-2px;
+	       }
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="main">	
+				<div class="flex-box trad_list">
+					<div class="flex-1" style="color:#fff;text-align: center;">名称</div>
+					<div class="flex-1" style="color:#1683CE;text-align: center;">上期价</div>
+					<div class="flex-1" style="color:#1683CE;text-align: center;">最新价</div>
+					<div class="flex-1" style="color:#1683CE;text-align: center;">涨跌幅</div>
+				</div>
+				<div class="flex-box tear_center" onclick="openTrad()">
+					<div class="flex-1">90#</div>
+					<div class="flex-1">6.16</div>
+					<div class="flex-1">6.16</div>
+					<div class="flex-1"><span class="zhangfu">6.16</span></div>
+				</div>
+				<div class="flex-box tear_center" onclick="openTrad()">
+					<div class="flex-1">93#</div>
+					<div class="flex-1">6.52</div>
+					<div class="flex-1">6.52</div>
+					<div class="flex-1"><span class="zhangfu">6.52</span></div>
+				</div>
+				<div class="flex-box tear_center" onclick="openTrad()">
+					<div class="flex-1">97#</div>
+					<div class="flex-1">6.89</div>
+					<div class="flex-1">6.89</div>
+					<div class="flex-1"><span class="zhangfu">6.89</span></div>
+				</div>
+				<div class="flex-box tear_center" onclick="openTrad()">
+					<div class="flex-1">0#</div>
+					<div class="flex-1">6.14</div>
+					<div class="flex-1">6.14</div>
+					<div class="flex-1"><span class="zhangfu" style="background: #12BB46;">6.14</span></div>
+				</div>
+				<div class="trad_hangxing">点击查看《行情使用声明》<i class="iconfont-iconxiangqingzhankai01"></i></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript">
+		function openTrad(){
+			api.openWin({
+				name: 'trad',
+				url: api.wgtRootDir + '/html/window/win.html',
+				pageParam: {
+					headerTitle: '买入',
+					frameName: 'TradList',
+					frameUrl: api.wgtRootDir + '/html/trad/trad_list.html'
+				},
+				bounces: false
+			});
+		}
+		apiready = function() {
+			
+		}
+	</script>
+</html>

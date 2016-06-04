@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="../../css/ct.css" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<style>
+			body{
+				background: #ECECEC;
+			}
+			.img-frm{
+				width: 90px;
+				height: 100px;
+				background: url(../../res/loading_400x400.png) no-repeat center;
+				background-size: cover;
+				margin-right: 10px;
+		        border:1px solid #f3f3f3;
+		        border-radius: 3px;				
+			}
+			h5{
+				font-size: 12px;
+			}
+			.list-view{
+				
+			}
+			.list-view > div:nth-child(2){
+				padding: 10px 5px 10px 0;
+ 			}
+			.radio{
+				padding: 0 5px;
+				align-items: center;
+				-webkit-align-items: center;
+				-webkit-box-align: center;
+			}
+			.count{
+				border: 1px solid #ddd;
+				border-radius: 3px;
+			}
+			.cart_num {
+				color: #999;
+				width: 40px;
+				/*border: 1px solid;*/
+				/*overflow: hidden;*/
+			}
+			.cart_num input{
+				/*border: 1px solid;*/
+				width: 34px;
+				text-align: center;
+			}
+			.descreate,
+			.add,
+			input{
+				padding: 3px;
+			}
+			.descreate,
+			.add{
+				text-align: center;
+				font-size: 18px;
+			}
+			.descreate{
+				text-align: center;
+				border-right: 1px solid #ddd;
+				padding: 3px 10px;
+			}
+			.add{
+				text-align: center;
+				border-left: 1px solid #ddd;
+				padding: 3px 8px;
+			}
+			/*.ct-icon-radio_1{
+				color: #ddd;
+			}*/
+			.iconfont-correct{
+				color: #F15352;
+			}
+			.yuanjia_num{
+				font-size: 12px;
+				padding-right: 5px;
+				padding-bottom: 5px;
+				color: red;
+			}
+			.zhehou{
+				font-size: 12px;
+				padding-right: 5px;
+				padding-bottom: 5px;
+				text-decoration:line-through;
+				color: #A5A5A5;
+			}
+			.zhekoujifen{
+				font-size: 12px;
+				padding-left: 5px;
+				padding-bottom: 5px;
+				color: #878787;
+			}
+			.you_like{
+				height: 40px;
+				line-height: 40px;
+				background: #E6E6E6;
+			}
+			.hengxian{
+				height: 1px;
+				background: #D4D4D4;
+				margin-top: 20px;
+			}
+			.caini_like{
+				font-size:10px ;
+				text-align: center;
+				padding-left: 2px;
+				padding-right: 2px;
+			}
+			.iconfont-xihuan{
+				color: #DB2E2F;
+				font-size: 12px;
+				padding-right: 2px;
+			}
+			.shop_list div{
+		 	height: 160px;
+		 	line-height: 160px;
+		 	text-align: center;
+		 	color: #CBCBCB;
+		 	background: #A0A0A0;
+		 }
+		footer {
+				line-height: 49px;
+				height: 50px;
+				width: 100%;
+				position: fixed;
+				z-index: 3;
+				bottom: 0;
+			}
+		 .box_left{
+		 	background-color: #fff;
+		 	color: #555555;
+		 
+		 }
+		 .box_right{
+		 	background-color: #DF3F3F;
+		 	color: #fff;
+		 	text-align: center;
+		 }
+		 .ct-icon-radio_1{
+		 	color: #fff;
+		 	padding-left: 5px;
+		 	font-size: 1.2em;
+		 	position: relative;
+		 	top:3px;
+		 }
+		 .ct-icon-radio_2{
+		 	color: #F15352;
+		 	padding-left: 5px;
+		 	font-size: 1.2em;
+		 	position: relative;
+		 	top:3px;
+		 }
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="main">
+				<div class="flex-box list-view " style="background: #fff;" onclick="shopDetails()">
+					<div class="radio flex-box" onclick="selected(this)">
+						<span class="iconfont-correct" style="font-size: 20px;"></span>
+					</div>
+					<div class="flex-1 flex-box" >
+						<div class="img-frm">
+							<div class="img"></div>
+						</div>
+						<div class="flex-1">
+							<h5 >高温高湿就开机键积极</h5>
+							<h5 style="color: #A5A5A5;">净含量：4L</h5>
+							<div class="flex-box">
+								<span class="yuanjia_num">￥123</span>
+								<span class="zhehou">123</span>
+								<span class="zhekoujifen">折扣积分</span>
+							</div>
+							<div class="flex-box">
+								<div class="flex-1">
+									<div class="flex-box count" style="width:90px">
+										<div class="descreate">-</div>
+										<div class="cart_num">
+											<input type="number"  />
+										</div>
+										<div class="add">+</div>
+									</div>
+								</div>
+								<div style="width: 30px;">
+									<span class="ct-icon-delete" style="font-size: 1.2em;"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex-box list-view " style="background: #F2F2F2;" onclick="shopDetails()">
+					<div class="radio flex-box" onclick="selected(this)">
+						<span class="iconfont-correct" style="font-size: 20px;"></span>
+					</div>
+					<div class="flex-1 flex-box" >
+						<div class="img-frm">
+							<div class="img"></div>
+						</div>
+						<div class="flex-1">
+							<h5 >高温高湿就开机键积极</h5>
+							<h5 style="color: #A5A5A5;">净含量：4L</h5>
+							<div class="flex-box">
+								<span class="yuanjia_num">￥123</span>
+								<span class="zhehou">123</span>
+								<span class="zhekoujifen">折扣积分</span>
+							</div>
+							<div class="flex-box">
+								<div class="flex-1">
+									<div class="flex-box count" style="width:90px">
+										<div class="descreate">-</div>
+										<div class="cart_num">
+											<input type="number"  />
+										</div>
+										<div class="add">+</div>
+									</div>
+								</div>
+								<div style="width: 30px;">
+									<span class="ct-icon-delete" style="font-size: 1.2em;"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex-box list-view " style="background: #fff;" onclick="shopDetails()">
+					<div class="radio flex-box" onclick="selected(this)">
+						<span class="iconfont-correct" style="font-size: 20px;"></span>
+					</div>
+					<div class="flex-1 flex-box" >
+						<div class="img-frm">
+							<div class="img"></div>
+						</div>
+						<div class="flex-1">
+							<h5 >高温高湿就开机键积极</h5>
+							<h5 style="color: #A5A5A5;">净含量：4L</h5>
+							<div class="flex-box">
+								<span class="yuanjia_num">￥123</span>
+								<span class="zhehou">123</span>
+								<span class="zhekoujifen">折扣积分</span>
+							</div>
+							<div class="flex-box">
+								<div class="flex-1">
+									<div class="flex-box count" style="width:90px">
+										<div class="descreate">-</div>
+										<div class="cart_num">
+											<input type="number"  />
+										</div>
+										<div class="add">+</div>
+									</div>
+								</div>
+								<div style="width: 30px;">
+									<span class="ct-icon-delete" style="font-size: 1.2em;"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex-box list-view " style="background: #F2F2F2;" onclick="shopDetails()">
+					<div class="radio flex-box" onclick="selected(this)">
+						<span class="iconfont-correct" style="font-size: 20px;"></span>
+					</div>
+					<div class="flex-1 flex-box" >
+						<div class="img-frm">
+							<div class="img"></div>
+						</div>
+						<div class="flex-1">
+							<h5 >高温高湿就开机键积极</h5>
+							<h5 style="color: #A5A5A5;">净含量：4L</h5>
+							<div class="flex-box">
+								<span class="yuanjia_num">￥123</span>
+								<span class="zhehou">123</span>
+								<span class="zhekoujifen">折扣积分</span>
+							</div>
+							<div class="flex-box">
+								<div class="flex-1">
+									<div class="flex-box count" style="width:90px">
+										<div class="descreate">-</div>
+										<div class="cart_num">
+											<input type="number"  />
+										</div>
+										<div class="add">+</div>
+									</div>
+								</div>
+								<div style="width: 30px;">
+									<span class="ct-icon-delete" style="font-size: 1.2em;"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="you_like flex-box">
+					<div class="flex-1 hengxian" style="margin-left: 15px;"></div>
+					<div class="flex-1 caini_like">
+						<i class="iconfont-xihuan"></i>购物车猜你喜欢
+					</div>
+					<div class="flex-1 hengxian" style="margin-right: 15px;"></div>
+				</div>
+				<div class="flex-box shop_list" style="margin-bottom: 50px;">
+					<div class="flex-1" style="margin-right: 2px;">
+						商品
+					</div>
+					<div class="flex-1" style="margin-left: 2px;">
+						商品
+					</div>
+				</div>
+				<div style="height: 50px; background: #ECECEC;"></div>
+				<footer id="footer" class="">
+				<div class="flex-box">
+					<div class="flex-2 box_left">
+						<span onclick="Cart.isSelectAll(this, 'myTestCart', 'my_test_cart_list')" tapmode="">
+							<span class="iconfont-correct" id="all" style=""></span>
+							<span style="color: #555555; font-size: 0.8em;">全选</span>
+						</span>
+						<span id="price"  style="color: #555555;padding-left: 5px;font-size: 0.8em;">
+							合计：<span id="all-price" style="color: #E25A5E;">￥0</span>
+						</span>
+					</div>
+					<div class="flex-1 box_right" onclick="openShopSheet()">
+						去结算(<span id="num" style="color: #fff;">0</span>)
+					</div>
+				</div>
+			</footer>
+			</div>
+			
+		</div>
+	</body>
+  <script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/common.js"></script>
+	<script type="text/javascript" src="../../script/doT.min.js" ></script>
+	<script type="text/javascript" src="../../script/echo.js" ></script>
+	<script type="text/javascript" src="../../script/swipe.js" ></script>
+	<script type="text/javascript">
+	    function shopDetails(){
+	    	api.openWin({
+				name: 'shopdetails',
+				url: api.wgtRootDir + '/html/window/win.html',
+				pageParam: {
+					headerTitle: '商品详情',
+					frameName: 'openDetails',
+					frameUrl: api.wgtRootDir + '/html/mine/shop_details.html'
+				},
+				bounces: false
+			});
+	    }
+		function addGoods(_this, id, type){
+			var countDom = $api.closest(_this, '.count'),
+					inputDom  = $api.dom(countDom, '[name=cart_num]'),
+					num = parseInt($api.val(inputDom));
+			$api.val(inputDom, num+1);
+			Cart.add({
+				cartName: 'myTestCart',
+				id: id,
+				num: 1,
+				type: type
+			});
+		}
+		function decreaseGoods(_this, id, type){
+			var countDom = $api.closest(_this, '.count'),
+					inputDom  = $api.dom(countDom, '[name=cart_num]'),
+					num = parseInt($api.val(inputDom));
+			if(num-1>0){
+				$api.val(inputDom, num-1);
+				Cart.decrease({
+					cartName: 'myTestCart',
+					id: id,
+					type: type,
+					num: 1
+				});
+			}
+		}
+		function isSelectAll(flag){
+			var listDoms = $api.domAll('#main > .list-view');
+			for(var i=0;i<listDoms.length;i++){
+				if(parseInt(flag)){
+					$api.dom(listDoms[i], '.radio > span').className = 'ct-icon-radio_2';
+				}else{
+					$api.dom(listDoms[i], '.radio > span').className = 'ct-icon-radio_1';
+				}
+			}
+		}
+	  function MyTestCartDel(tid, type, _this){
+	  	api.confirm({
+	  		title: '提示信息',
+	  		msg: '确定要删除该商品吗？',
+	  		buttons: ['取消', '确定']
+	  	}, function(ret, err){
+	  		if(ret.buttonIndex == 2){
+	  			tool.ajax.get({
+			  		ctrl:"Test",
+			  		fn:"testCartDel",
+			  		hideLoading: true,
+			  		data:{
+			  			values:{
+			  				id: $api.getStorage("memberId"),
+			  				token:$api.getStorage('token'),
+			  				testid:tid,
+			  				type:type
+			  			}
+			  		}, test: true
+			  	},function(){
+			  		/*缓存数据*/
+		  			Cart.delete({
+		  				cartName: 'myTestCart',
+		  				type: type,
+		  				id: tid
+		  			}, function(){
+		  				$api.remove($api.closest(_this, '.list-view'));
+				  		var listDoms = $api.domAll('#main > .list-view');
+				  		if(listDoms.length == 0){
+				  			var _html = ''+
+									'<div class="null flex-box">'+
+										'<div class="flex-1">'+
+											'购物车还是空的，快快去购物吧！！'+
+										'</div>'+
+									'</div>';
+								$api.html($api.dom('#main'), _html);
+				  		}
+		  			});
+			  	});
+	  		}
+	  	});
+	  }
+	  function resetInfo(isAll, price, type){
+			/*
+			 * number/string isAll
+			 * number/string price
+			 * number/string type
+			 */
+
+			if(parseInt(isAll)){
+				$api.dom('#all').className = 'ct-icon-radio_2';
+			}else{
+				$api.dom('#all').className = 'ct-icon-radio_1';
+			}
+			$api.text($api.dom('#all-price'), price||0);
+			$api.text($api.dom('#num'), type||0);			
+		}
+		apiready = function(){
+			Cart.clearAllSelect('myTestCart');
+//			reload();
+		}
+	</script>
+</html>

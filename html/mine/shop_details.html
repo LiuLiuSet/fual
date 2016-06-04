@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="../../css/ct.css"/>
+		<style type="text/css">
+		.swipe-wrap .img{
+				height: 180px;
+			}
+			.wenzi{
+				font-size: 12px;
+				color: #595959;
+				font-weight: 700;
+			}
+			.cart_jiage{
+				font-size: 12px;
+				color: red;
+			}
+			.yuanjia_ge{
+				font-size: 12px;
+				color: #AAA9A9;
+				padding-top: 3px;
+			}
+			.koubie{
+				border-top:1px solid #F2F2F2;
+			}
+			.shangping_kou{
+				padding: 8px 10px;
+				font-size: 14px;
+				font-weight: 700;
+			    color: #5F5F5F;
+			}
+			.list_pinglun{
+				background: #FFE5E6;
+				font-size: 12px;
+				text-align: center;
+				border-radius: 3px;
+				line-height: 30px;
+			}
+			footer{
+				position: fixed;
+				z-index: 3;
+				bottom: 0;
+				height: 45px;
+				width: 100%;
+			}
+			.dibu div{
+				text-align: center;
+				line-height: 45px;
+				color: #fff;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<header>
+				<div id="slider" class="swipe">
+					<div class="swipe-wrap">
+						<div>
+							<div class="img-frm">
+								<div class="img" onclick="" tapmode=""></div>
+							</div>
+						</div>
+						<div>
+							<div class="img-frm">
+								<div class="img" onclick="" tapmode=""></div>
+							</div>
+						</div>	
+						<div>
+							<div class="img-frm">
+								<div class="img" onclick="" tapmode=""></div>
+							</div>
+						</div>	
+					</div>
+					<div id="pointer">
+						<a class="active"></a>
+						<a class=""></a>
+						<a class=""></a>
+					</div>
+				</div>				
+			</header>
+			<div id="main">
+				<div style="padding: 5px 12px;">
+					<h5 class="wenzi">重庆汉渝路第八十一号店</h5>
+					<div class="flex-box">
+						<div class="flex-1">
+							<span class="wenzi">换购价 :</span>
+							<span class='cart_jiage'>￥123</span>
+						</div>
+						<div class="flex-1">
+							<span class="wenzi">使用积分 :</span>
+							<span style="font-size: 12px;">123</span>
+						</div>
+					</div>
+					<p class="yuanjia_ge">价格：
+						<span style="color: #AAA9A9;text-decoration:line-through">234</span>
+					</p>
+					<p  class="yuanjia_ge" style="padding-bottom: 10px;">
+						运费：
+						<span style="color: #AAA9A9;padding-right: 20px;">￥20</span>
+						月销售236笔
+					</p>
+				</div>
+				<div class="koubie">
+					<p class="shangping_kou">商品口碑</p>
+					<div class="flex-box" style="padding:5px 20px;">
+						<div class="flex-1 list_pinglun">正品(123)</div>
+						<div class="flex-1 list_pinglun" style="margin-left: 10px;margin-right: 10px;">实惠(13)</div>
+						<div class="flex-1 list_pinglun">耐用(156)</div>
+					</div>
+					<div class="flex-box" style="padding:5px 20px;">
+						<div class="flex-1 list_pinglun">正品(123)</div>
+						<div class="flex-1 list_pinglun" style="margin-left: 10px;margin-right: 10px;">实惠(13)</div>
+						<div class="flex-1 list_pinglun">耐用(156)</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="flex-box dibu">
+					<div class="flex-1" style="background: #F39801;">加入购物车</div>
+					<div class="flex-1" style="background: #DF3F3F;">立即换购</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/swipe.js" ></script>
+	<script type="text/javascript">
+		function swipeInit() {
+				var slideIndexs = $api.domAll('#pointer > a'),
+					slidLength = slideIndexs.length;
+				new Swipe(document.getElementById('slider'), {
+					speed: 400,
+					auto: 3000,
+					continuous: true,
+					disableScroll: true,
+					stopPropagation: true,
+					callback: function(index, elem) {
+						for (var i = 0; i < slidLength; i++) {
+							if ($api.hasCls(slideIndexs[i], 'active')) {
+								$api.removeCls(slideIndexs[i], 'active');
+							}
+						}
+						
+						try{
+							$api.addCls(slideIndexs[index], 'active');
+						}catch(e){
+							if(index>=slidLength){
+								index = 0;
+								$api.addCls(slideIndexs[index], 'active')
+							}else{
+								alert('swipe error');
+							}
+						}
+					},
+					transitionEnd: function(index, elem) {}
+				});
+			}
+		swipeInit();	
+		apiready = function(){
+			
+		}
+	</script>
+</html>

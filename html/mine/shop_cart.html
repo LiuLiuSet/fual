@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="../../css/ct.css"/>
+		<style type="text/css">
+		.swipe-wrap .img{
+				height: 120px;
+			}
+		.mine-title{
+		    border-bottom: 1px solid #F3F3F3;
+		   	background: #fff;
+		   }
+		 .mine-title > div{
+		   	text-align: center;
+		   }
+		 .tunyouliang p{
+		   	font-size: 13px;
+		   	color: #666666;
+		   }
+		 .tunyouliang i{
+		   	padding-right: 5px;
+		   	font-size: 22px;
+		   }
+		 .tunyouliang{
+		   	margin-top: 8px;
+		   	margin-bottom: 8px;
+		   }
+		 .ad_list{
+		 	margin: 20px 15px;
+		 }
+		 .ad_list div{
+		 	text-align: center;
+		 }
+		 .ad_name{
+		 	font-size: 12px;
+		 }
+		 .ad_list div p img{
+		 	background-size:100% ;
+		 }
+		 .shop_list div{
+		 	height: 160px;
+		 	line-height: 160px;
+		 	text-align: center;
+		 	color: #CBCBCB;
+		 	background: #A0A0A0;
+		 }
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<header>
+				<div id="slider" class="swipe">
+					<div class="swipe-wrap">
+						<div>
+							<div class="img-frm">
+								<div class="img" onclick="" tapmode=""></div>
+							</div>
+						</div>
+						<div>
+							<div class="img-frm">
+								<div class="img" onclick="" tapmode=""></div>
+							</div>
+						</div>	
+						<div>
+							<div class="img-frm">
+								<div class="img" onclick="" tapmode=""></div>
+							</div>
+						</div>	
+					</div>
+					<div id="pointer">
+						<a class="active"></a>
+						<a class=""></a>
+						<a class=""></a>
+					</div>
+				</div>				
+			</header>
+			<div id="main">
+		       <div class="flex-box mine-title">
+					<div class="flex-1 tunyouliang" onclick="opneAmount()">
+						<p>
+							<i class="iconfont-lingqu" style="color: #F2A600;"></i>领取积分
+						</p>
+						<p style="font-size: 10px;color: #ADADAD;padding-left: 15px;">每日领取5积分</p>
+					</div>
+					<div class="flex-1 tunyouliang" style="border-right: 1px solid #EBEBEB; border-left: 1px solid #EBEBEB;">
+						<p>
+							<i class="iconfont-point" style="color: #0099E7;"></i>累计积分
+						</p>
+						<p style="padding-left: 20px;color: #ADADAD;">25892</p>
+					</div>
+					<div class="flex-1 tunyouliang">
+						<p>
+							<i class="iconfont-zliconspare01" style="color: #D94241;"></i>累计节省
+						</p>
+						<p style="padding-left: 20px;color: #ADADAD;">12.5元</p>
+					</div>
+				</div>
+				<div class="flex-box ad_list">
+					<div class="flex-1">
+						<p><img src="../../image/img1.png" style="width: 20px; height: 20px;margin-top: 2px;"></p>
+						<p class="ad_name">壳牌</p>
+					</div>
+					<div class="flex-1">
+						<p><img src="../../image/img2.png" style="width: 80px; height: 20px;margin-top: 2px;"></p>
+						<p class="ad_name" style="">美孚</p>
+					</div>
+					<div class="flex-1">
+						<p><img src="../../image/BP.png" style="width: 20px; height: 20px;margin-top: 2px;"></p>
+						<p class="ad_name">BP</p>
+					</div>
+					<div class="flex-1">
+					<p><img src="../../image/img3.png" style="width: 20px; height: 20px;margin-top: 2px;"></p>
+						<p class="ad_name">长城</p>
+					</div>
+					<div class="flex-1">
+					<p><img src="../../image/img4.png" style="width: 40px; height: 10px;margin-top: 6px;"></p>
+						<p class="ad_name" style="margin-top: 7px;">统一</p>
+					</div>
+				</div>
+				<div class="flex-box ad_list">
+					<div class="flex-1">
+						<p><img src="../../image/img5.png" style="width: 20px; height: 20px;margin-top: 2px;"></p>
+						<p class="ad_name">康普顿</p>
+					</div>
+					<div class="flex-1" style="padding-left: 30px;">
+						<p><img src="../../image/img6.png" style="width: 20px; height: 20px;margin-top: 2px;margin-left: -35px;"></p>
+						<p class="ad_name" style="margin-left: -30px;">德国福斯</p>
+					</div>
+					<div class="flex-1">
+						<p><img src="../../image/img7.png" style="width: 20px; height: 20px;margin-top: 2px;"></p>
+						<p class="ad_name">道达尔</p>
+					</div>
+					<div class="flex-1">
+					<p><img src="../../image/img8.png" style="width: 40px; height: 12px;margin-top: 6px;"></p>
+						<p class="ad_name" style="margin-top: 5px;">嘉实多</p>
+					</div>
+					<div class="flex-1">
+					   <p><img src="../../image/img9.png" style="width: 20px; height: 20px;margin-top: 2px;"></p>
+						<p class="ad_name" >昆仑</p>
+					</div>
+				</div>
+				<div style="height: 1px; background: #ECECEC;"></div>
+				<div class="flex-box shop_list" style="margin-top: 4px;">
+					<div class="flex-1" style="margin-right: 2px;">
+						商品
+					</div>
+					<div class="flex-1" style="margin-left: 2px;">
+						商品
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/swipe.js" ></script>
+	<script type="text/javascript">
+		function swipeInit() {
+				var slideIndexs = $api.domAll('#pointer > a'),
+					slidLength = slideIndexs.length;
+				new Swipe(document.getElementById('slider'), {
+					speed: 400,
+					auto: 3000,
+					continuous: true,
+					disableScroll: true,
+					stopPropagation: true,
+					callback: function(index, elem) {
+						for (var i = 0; i < slidLength; i++) {
+							if ($api.hasCls(slideIndexs[i], 'active')) {
+								$api.removeCls(slideIndexs[i], 'active');
+							}
+						}
+						
+						try{
+							$api.addCls(slideIndexs[index], 'active');
+						}catch(e){
+							if(index>=slidLength){
+								index = 0;
+								$api.addCls(slideIndexs[index], 'active')
+							}else{
+								alert('swipe error');
+							}
+						}
+					},
+					transitionEnd: function(index, elem) {}
+				});
+			}
+		swipeInit();	
+		apiready = function(){
+			
+		}
+	</script>
+</html>

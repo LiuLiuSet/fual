@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="../../css/ct.css" />
+		<title>Document</title>
+		<style type="text/css">
+	       .ma-title{
+	       	background: #DF3F40;
+	       	height: 90px;
+	       }
+	       .mx-centen{
+	       	text-align: center;
+	       	color: #fff;
+	       	padding-top: 20px;
+	       }
+	       .mx-centen p{
+	       	color: #fff;
+	       	
+	       }.mx-centen i{
+	       	font-size: 30px;
+	       
+	       }
+	       .guangao {
+	       	line-height: 30px;
+	       	color: #E5696A;
+	       	font-size: 10px;
+	       	padding-left: 18px;
+	       }
+	       .qushi{
+	       	  border-top:1px solid #EAEAEA;
+	       	  border-bottom: 1px solid #EAEAEA;
+	       	  min-height: 120px;
+	       }
+	       .cx_table{
+            	color: #000;
+            	margin-top: 5px;
+            }
+            .cx_table div{
+            	color: #000;
+            	text-align: center;
+            	line-height: 35px;
+            	
+            }
+            .cx_table div span{
+            	color: #000;
+            }
+            
+            .ct_table1 div{
+            	height: 35px;
+            	border-right: 1px solid #FBE1CE;
+            	border-bottom: 1px solid #FBE1CE;
+            	padding: 0 5px;
+            }
+            .ct_table2 div{
+            	font-size: 0.8em;
+            	line-height: 35px;
+            	height: 35px;
+            	border-bottom: 1px solid #FBE1CE;
+            }
+            .ct-table3{
+            	font-size:0.9em ;
+            	padding: 22px 18px;
+            	background: #DF3F40;
+            }
+            .ct-table3 p{
+            	color: #fff;
+            }
+            .swipe{
+            	position: relative;
+            	top:0px;
+            }
+            .swipe-wrap .img{
+				height: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">		
+			<div id="main">
+				<div class="ma-title flex-box">
+					<div class="flex-1 mx-centen" onclick="openHoard()">
+						<i class="iconfont-tongliushui"></i>
+						<p>囤油</p>
+					</div>
+					<div class="flex-1 mx-centen" onclick="openShop()">
+						<i class="iconfont-iaoyiguanli"></i>
+						<p>卖出</p>
+					</div>
+					<div class="flex-1 mx-centen" onclick="openQuery()">
+						<i class="iconfont-zhiliuchechaxun"></i>
+						<p>违章查询</p>
+					</div>
+				</div>
+				<div class="guangao"><i class="iconfont-guangbo" style="padding-right: 5px;color: #DC2F30;"></i>广告费申达股份东西很不规范等回家跟，挂号费的广泛的</div>
+				<div class="qushi">
+					
+				</div>
+				<div class="cx_table flex-box">
+			    	<div class="ct_table1">
+			    		<div style="background: #DF3F40; color: #fff; font-size: 0.8em;border-top:1px solid #DF3F40; ">今日油价</div>
+			    		<div style="font-size: 0.8em; color: #F58C4D;">单价
+			    			<span style="font-size: 0.6em;color: #F58C4D;">(元/L)</span>
+			    		</div>
+			    		<div style="font-size: 0.8em; color: #F47E32;">买立省
+			    			<span style="font-size: 0.6em;color: #F47E32;">(元/L)</span>
+			    		</div>
+			    	</div>
+			    	<div class="ct_table2 flex-3">
+			    		<div class="flex-box" >
+			    			<div class="flex-1" style="border-top:1px solid #FBE1CE;">
+			    				90
+			    				<span style="position: relative;top:-3px;">#</span>
+			    			</div>
+			    			<div class="flex-1" style="border-top:1px solid #FBE1CE;">93
+			    				<span style="position: relative;top:-3px;">#</span>
+			    			</div>
+			    			<div class="flex-1" style="border-top:1px solid #FBE1CE;">97
+			    				<span style="position: relative;top:-3px;">#</span>
+			    			</div>
+			    			<div class="flex-1" style="border-top:1px solid #FBE1CE;">0
+			    			    <span style="position: relative;top:-3px;">#</span>
+			    			</div>
+			    		</div>
+			    		<div class="flex-box" >
+			    			<div class="flex-1" style="color: #FA7170;">6.16</div>
+			    			<div class="flex-1" style="color: #FA7170;">6.52</div>
+			    			<div class="flex-1" style="color: #FA7170;">6.89</div>
+			    			<div class="flex-1" style="color: #47CDAB;">6.14</div>
+			    		</div>
+			    		<div class="flex-box">
+			    			<div class="flex-1" style="color: #FBB45A;">0.2</div>
+			    			<div class="flex-1" style="color: #FBB45A;">0.3</div>
+			    			<div class="flex-1" style="color: #FBB45A;">0.5</div>
+			    			<div class="flex-1" style="color: #FBB45A;">0.13</div>
+			    		</div>
+			    	</div>
+			    	<div class="ct-table3"style="border-top:1px solid #DF3F40;">
+			    		<div>
+			    			<p>立即</p>
+			    			<p style="margin-top: -15px;">囤油</p>
+			    		</div>
+			    	</div>
+			    </div> 
+			    <div id="slider" class="swipe">
+					<div class="swipe-wrap">
+						<div>
+							<div class="img-frm">
+								<div class="img" onclick="" tapmode=""></div>
+							</div>
+						</div>
+						<div>
+							<div class="img-frm">
+								<div class="img" onclick="" tapmode=""></div>
+							</div>
+						</div>	
+						<div>
+							<div class="img-frm">
+								<div class="img" onclick="" tapmode=""></div>
+							</div>
+						</div>	
+					</div>
+					<div id="pointer">
+						<a class="active"></a>
+						<a class=""></a>
+						<a class=""></a>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/swipe.js" ></script>
+	<script type="text/javascript">
+		function swipeInit() {
+			var slideIndexs = $api.domAll('#pointer > a'),
+				slidLength = slideIndexs.length;
+			new Swipe(document.getElementById('slider'), {
+				speed: 400,
+				auto: 3000,
+				continuous: true,
+				disableScroll: true,
+				stopPropagation: true,
+				callback: function(index, elem) {
+					for (var i = 0; i < slidLength; i++) {
+						if ($api.hasCls(slideIndexs[i], 'active')) {
+							$api.removeCls(slideIndexs[i], 'active');
+						}
+					}
+					
+					try{
+						$api.addCls(slideIndexs[index], 'active');
+					}catch(e){
+						if(index>=slidLength){
+							index = 0;
+							$api.addCls(slideIndexs[index], 'active')
+						}else{
+							alert('swipe error');
+						}
+					}
+				},
+				transitionEnd: function(index, elem) {}
+			});
+		}	
+		swipeInit();	
+		function openHoard(){
+			api.openWin({
+				name: 'hoard',
+				url: api.wgtRootDir + '/html/window/win.html',
+				pageParam: {
+					headerTitle: '囤油',
+					frameName: 'openhoard',
+					frameUrl: api.wgtRootDir + '/html/trad/index.html'
+				},
+				bounces: false
+			});
+		}
+		function openShop(){
+			api.openWin({
+				name: 'shop',
+				url: api.wgtRootDir + '/html/window/win.html',
+				pageParam: {
+					headerTitle: '卖出',
+					frameName: 'openhoard',
+					frameUrl: api.wgtRootDir + '/html/trad/trad_list.html'
+				},
+				bounces: false
+			});
+		}
+		function openQuery(){
+			api.openWin({
+				name: 'query',
+				url: api.wgtRootDir + '/html/window/win.html',
+				pageParam: {
+					headerTitle: '违章查询',
+					frameName: 'openQuery',
+					frameUrl: api.wgtRootDir + '/html/index/query.html'
+				},
+				bounces: false
+			});
+		}
+		apiready = function() {
+			
+		}
+	</script>
+
+</html>

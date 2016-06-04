@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="../../css/ct.css"/>
+		<style type="text/css">
+		body{
+			background: #E6E6E6;
+		}
+		.list-view{
+          	padding: 8px 55px 8px 30px;
+          	background-color: #fff;
+          	border-bottom: 1px solid #E2E2E2;;
+          	position: relative;
+          }
+          .list-view .img-frm{
+		       /*	background: url(../../image/measure_list.png) no-repeat center;*/
+		       	background-size: cover;
+		       	height: 45px;
+		        width: 45px;
+		        background: #A0A0A0;
+		   }
+		   .list-view p{
+		   	font-size: 14px;
+		   	color: #ACACAC;
+		   	margin-top: -3px;
+		   }  
+		   .iconfont-jiantou{
+		   	color: #ACACAC;
+		   	position: absolute;
+		   	top:20px;
+		   	right: 15px;
+		   	font-size: 18px;
+		   }
+		   .mine-title{
+		    bborder-top: 1px solid #E6E6E6;
+		   	background: #fff;
+		   }
+		   .mine-title > div{
+		   	text-align: center;
+		   }
+		   .tunyouliang p{
+		   	font-size: 13px;
+		   	color: #666666;
+		   }
+		   .tunyouliang i{
+		   	padding-right: 5px;
+		   }
+		   .tunyouliang{
+		   	margin-top: 15px;
+		   	margin-bottom: 15px;
+		   }
+		   .mine-tit{
+		   	margin-top: 5px;
+		   	background-color: #fff;
+		   	line-height: 35px;
+		   	border-bottom: 1px solid #E6E6E6;
+		   }
+		   .mine-tit i{
+		   	 font-size: 30px;
+		   	 color: #DB3132;
+		   	 position: relative;
+		   	 top:3px;
+		   	 padding: 0 4px 0 10px ;
+		   }
+		   .mine-two{
+		   	height: 70px;
+		   	border-top:1px solid #ECECEC;
+		   	border-bottom: 1px solid #ECECEC;
+		   	background-color: #fff;
+		   }
+		   .mine-two > div{
+		      text-align: center;	
+		   }
+		   .mine-two p{
+		   	font-size: 12px;
+		   }
+		   .mine-two p i{
+		   	color: #D82426;
+		   	padding-right: 5px;
+		   }
+		   .mine-zong{
+		   	  padding-top: 10px;
+		   }
+		   .num{
+		   	width: 10px;
+		   	height: 10px;
+		   	border-radius: 50%;
+		   	border:1px solid #D82426;
+		   	color: #D82426;
+		   	line-height: 10px;
+		   	text-align: center;
+		   	font-size: 10px;
+		   	position: relative;
+		   	left: 54%;
+		   	top: -42px;
+		   }
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="main">
+			   <div class="flex-box list-view " onclick="openAccount() ">
+					<div class="img-frm" >
+						<div class="img"></div>
+					</div>
+					<div class="flex-1" style="padding-left: 13px;margin-top: -3px;">
+						<h5>用户名</h5>
+						<p>135632548457</p>
+					</div>
+					<i class="iconfont-jiantou"></i>
+				</div>
+				<div class="flex-box mine-title">
+					<div class="flex-1 tunyouliang" onclick="opneAmount()">
+						<p>
+							<i class="iconfont-zhanxianliang"></i>囤油量
+						</p>
+						<p style="padding-left: 20px;color: #ADADAD;">134546</p>
+					</div>
+					<div class="flex-1 tunyouliang" style="border-right: 2px solid #EBEBEB; border-left: 2px solid #EBEBEB;">
+						<p>
+							<i class="iconfont-yue"></i>余额
+						</p>
+						<p style="padding-left: 20px;color: #ADADAD;">256892</p>
+					</div>
+					<div class="flex-1 tunyouliang">
+						<p>
+							<i class="iconfont-jifen"></i>可用积分
+						</p>
+						<p style="padding-left: 20px;color: #ADADAD;">256892</p>
+					</div>
+				</div>
+				<div class="mine-tit">
+					<i class="iconfont-haiyangshiyou"></i>囤油
+				</div>
+				<div class="flex-box mine-two">
+					<div class="flex-1 mine-zong">
+						<p><i class="iconfont-svg33" style="font-size: 22px;"></i>总资产</p>
+						<p style="font-size: 8px;color: #028700;">账户安全保护中</p>
+					</div>
+					<div class="flex-1 mine-zong" style="border-left: 2px solid #EBEBEB;border-right: 2px solid #EBEBEB;" onclick="openTopUp()">
+						<p><i class="iconfont-chongzhi" style="font-size: 22px;"></i>充值</p>
+						<p style="font-size: 8px;">绑定银行卡享快捷支付</p>
+					</div>
+					<div class="flex-1 mine-zong" onclick="openWithDrawal()">
+						<p><i class="iconfont-tixian" style="font-size: 22px;"></i>提现</p>
+						<p style="font-size: 8px;">24小时快速到账</p>
+					</div>
+				</div>
+				<div class="mine-tit" style="margin-top: 1px;">
+					<i class="iconfont-shangcheng"></i>商城
+				</div>
+				<div class="flex-box mine-two">
+					<div class="flex-1 mine-zong" onclick="openShopCart()">
+						<p><i class="iconfont-gouwuche" style="font-size: 22px;"></i></p>
+						<p style="font-size: 12px;">购物车</p>
+						<div class="num">1</div>
+					</div>
+					<div class="flex-1 mine-zong" style="border-left: 2px solid #EBEBEB;border-right: 2px solid #EBEBEB;">
+						<p><i class="iconfont-daishouhuo" style="font-size: 22px;"></i></p>
+						<p style="font-size: 12px;">待收货</p>
+						<div class="num">1</div>
+					</div>
+					<div class="flex-1 mine-zong" style="border-right: 2px solid #EBEBEB;">
+						<p><i class="iconfont-pingjia" style="font-size: 22px;"></i></p>
+						<p style="font-size: 12px;">待评价</p>
+						<div class="num">1</div>
+					</div>
+					<div class="flex-1 mine-zong">
+						<p><i class="iconfont-shangyezixun" style="font-size: 22px;"></i></p>
+						<p style="font-size: 12px;">购物记录</p>
+						<div class="num">1</div>
+					</div>
+				</div>
+				<div class="" style="height: 90px; background: #9F9F9F;margin-top: 2px;text-align: center;line-height: 90px;color: #fff;">产品介绍</div>
+			    <div class="flex-box" style="height: 90px; background: #9F9F9F;margin-top: 2px;">
+			    	<div class="flex-1"></div>
+			    	<div class="flex-1" style="border-left: 2px solid #EBEBEB;border-right: 2px solid #EBEBEB;"></div>
+			    	<div class="flex-1"></div>
+			    </div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript">
+         function openTopUp(){
+         	api.openWin({
+				name: 'topup',
+				url: api.wgtRootDir + '/html/window/win.html',
+				pageParam: {
+					headerTitle: '充值',
+					frameName: 'openTopUp',
+					frameUrl: api.wgtRootDir + '/html/mine/top_up.html'
+				},
+				bounces: false
+			});
+         }
+         function openWithDrawal(){
+         api.openWin({
+				name: 'withdrawal',
+				url: api.wgtRootDir + '/html/window/win.html',
+				pageParam: {
+					headerTitle: '充值',
+					frameName: 'openWithDrawal',
+					frameUrl: api.wgtRootDir + '/html/mine/withdrawal.html'
+				},
+				bounces: false
+			});
+         }
+         function openAccount(){
+         	api.openWin({
+				name: 'account',
+				url: api.wgtRootDir + '/html/window/win.html',
+				pageParam: {
+					headerTitle: '个人账户',
+					frameName: 'openAccount',
+					frameUrl: api.wgtRootDir + '/html/mine/account.html'
+				},
+				bounces: false
+			});
+         }
+         function opneAmount(){
+         	api.openWin({
+				name: 'amount',
+				url: api.wgtRootDir + '/html/window/win.html',
+				pageParam: {
+					headerTitle: '囤油量',
+					frameName: 'openAmount',
+					frameUrl: api.wgtRootDir + '/html/mine/amount.html'
+				},
+				bounces: false
+			});
+         }
+         function openShopCart(){
+         	api.openWin({
+				name: 'openshopcart',
+				url: api.wgtRootDir + '/html/window/shop.html',
+				bounces: false
+			});	
+         }
+		apiready = function(){
+			
+		}
+	</script>
+</html>

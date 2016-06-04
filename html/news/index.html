@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="../../css/ct.css"/>
+		<style type="text/css">
+		.swipe-wrap .img{
+				height: 150px;
+			}
+		.new-guangao{
+			font-size: 12px;
+			padding-left: 25px;
+			line-height: 25px;
+		}
+		.new-guangao i{
+			padding-right: 8px;
+			position: relative;
+			top:1px;
+		}
+		.list-view{
+          	padding: 8px 55px 8px 8px;
+          	background-color: #fff;
+          	border-bottom: 1px solid #E2E2E2;;
+          	position: relative;
+          }
+          .list-view .img-frm{
+		       /*	background: url(../../image/measure_list.png) no-repeat center;*/
+		       	background-size: cover;
+		       	height: 60px;
+		        width: 85px;
+		        background: #A0A0A0;
+		       }
+		    .center{
+		    	font-size: 12px;
+		    	color: #B7B7B7;
+		    }
+		    .zhuangti{
+		    	position: absolute;
+		    	right: 18px;
+		    	font-size: 12px;
+		    	border:1px solid #E88485;
+		    	color: #E88485;
+		    	padding: 1px 5px;
+		    	top:45px;
+		    }
+		    .dujia{
+		    	position: absolute;
+		    	right: 18px;
+		    	font-size: 12px;
+		    	border:1px solid #4DC6F0;
+		    	color: #4DC6F0;
+		    	padding: 1px 5px;
+		    	top:45px;
+		    }
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<header>
+				<div id="slider" class="swipe">
+					<div class="swipe-wrap">
+						<div>
+							<div class="img-frm">
+								<div class="img" onclick="" tapmode=""></div>
+							</div>
+						</div>
+						<div>
+							<div class="img-frm">
+								<div class="img" onclick="" tapmode=""></div>
+							</div>
+						</div>	
+						<div>
+							<div class="img-frm">
+								<div class="img" onclick="" tapmode=""></div>
+							</div>
+						</div>	
+					</div>
+					<div id="pointer">
+						<a class="active"></a>
+						<a class=""></a>
+						<a class=""></a>
+					</div>
+				</div>				
+			</header>
+			<div id="main">
+		       <div class="new-guangao">
+		       	  <i class="iconfont-tupian"></i>好的撮合合肥的分型，一条新闻开始
+		       </div>
+		      <div class="flex-box list-view ">
+					<div class="img-frm" >
+						<div class="img"></div>
+					</div>
+					<div class="flex-1" style="padding-left: 10px;">
+						<h5 style="font-weight: 700;">新闻标题</h5>
+						<div class="center">换个和点滴积累基地回答罗杰斯电脑或的 寄到，降低</div>
+					</div>
+					<div class="zhuangti">专题</div>
+				</div>
+				<div class="flex-box list-view ">
+					<div class="img-frm" >
+						<div class="img"></div>
+					</div>
+					<div class="flex-1" style="padding-left: 10px;">
+						<h5 style="font-weight: 700;">新闻标题</h5>
+						<div class="center">换个和点滴积累基地回答罗杰斯电脑或的 寄到，降低</div>
+					</div>
+				  
+				</div>
+				<div class="flex-box list-view ">
+					<div class="img-frm" >
+						<div class="img"></div>
+					</div>
+					<div class="flex-1" style="padding-left: 10px;">
+						<h5 style="font-weight: 700;">新闻标题</h5>
+						<div class="center">换个和点滴积累基地回答罗杰斯电脑或的 寄到，降低</div>
+					</div>
+					<div class="dujia">独家</div>
+				</div>
+				<div class="flex-box list-view ">
+					<div class="img-frm" >
+						<div class="img"></div>
+					</div>
+					<div class="flex-1" style="padding-left: 10px;">
+						<h5 style="font-weight: 700;">新闻标题</h5>
+						<div class="center">换个和点滴积累基地回答罗杰斯电脑或的 寄到，降低</div>
+					</div>
+				</div>
+				<div class="flex-box list-view ">
+					<div class="img-frm" >
+						<div class="img"></div>
+					</div>
+					<div class="flex-1" style="padding-left: 10px;">
+						<h5 style="font-weight: 700;">新闻标题</h5>
+						<div class="center">换个和点滴积累基地回答罗杰斯电脑或的 寄到，降低</div>
+					</div>
+					
+				</div>
+			</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/swipe.js" ></script>
+	<script type="text/javascript">
+		function swipeInit() {
+				var slideIndexs = $api.domAll('#pointer > a'),
+					slidLength = slideIndexs.length;
+				new Swipe(document.getElementById('slider'), {
+					speed: 400,
+					auto: 3000,
+					continuous: true,
+					disableScroll: true,
+					stopPropagation: true,
+					callback: function(index, elem) {
+						for (var i = 0; i < slidLength; i++) {
+							if ($api.hasCls(slideIndexs[i], 'active')) {
+								$api.removeCls(slideIndexs[i], 'active');
+							}
+						}
+						
+						try{
+							$api.addCls(slideIndexs[index], 'active');
+						}catch(e){
+							if(index>=slidLength){
+								index = 0;
+								$api.addCls(slideIndexs[index], 'active')
+							}else{
+								alert('swipe error');
+							}
+						}
+					},
+					transitionEnd: function(index, elem) {}
+				});
+			}
+		swipeInit();	
+		apiready = function(){
+			
+		}
+	</script>
+</html>
